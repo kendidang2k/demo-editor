@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import DropzoneUploader from './components/dropzone-uploader/DropzoneUploader';
+import ImagesEditor from './components/images-editor/ImagesEditor';
 
 function App() {
+  const [selectedImage, setSelectedImage] = useState(null)
+  const [uploadedFiles, setUploadedFiles] = useState([])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App grid grid-cols-2 h-screen items-center justify-center">
+      <div className='col-span-1 w-full h-full'>
+        <DropzoneUploader selectedImage={selectedImage} setSelectedImage={setSelectedImage} uploadedFiles={uploadedFiles} setUploadedFiles={setUploadedFiles} />
+      </div>
+      <div className='col-span-1'>
+        <ImagesEditor selectedImage={selectedImage} uploadedFiles={uploadedFiles} />
+      </div>
     </div>
   );
 }
