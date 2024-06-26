@@ -57,14 +57,12 @@ export default function ImagesEditor({ selectedImage, uploadedFiles, files, setF
                     onSave={(editedImageObject, designState) => {
                         console.log('saved', editedImageObject, designState)
                         handleSave(editedImageObject)
-                    }
-                    }
-                    onClose={closeImgEditor}
-                    annotationsCommon={{
-                        fill: '#ff0000',
                     }}
+                    closeAfterSave={true}
+                    savingPixelRatio={1}
+                    onClose={closeImgEditor}
                     defaultSavedImageQuality={1}
-                    previewPixelRatio={1}
+                    previewPixelRatio={10}
                     Text={{ text: 'Filerobot...' }}
                     Rotate={{ angle: 90, componentType: 'slider' }}
                     Crop={{

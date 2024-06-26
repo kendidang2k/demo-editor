@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import './App.css';
 import DropzoneUploader from './components/dropzone-uploader/DropzoneUploader';
 import ImagesEditor from './components/images-editor/ImagesEditor';
-import FineUploader from './components/fine-uploader/FineUploader';
+import './App.css';
 
 function App() {
   const [selectedImage, setSelectedImage] = useState(null)
@@ -24,4 +23,3 @@ function App() {
 }
 
 export default App;
-  
