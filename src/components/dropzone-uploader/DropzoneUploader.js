@@ -37,8 +37,7 @@ const img = {
     cursor: 'pointer'
 };
 
-export default function DropzoneUploader({ selectedImage, setSelectedImage, uploadedFiles, setUploadedFiles }) {
-    const [files, setFiles] = useState([]);
+export default function DropzoneUploader({ files, setFiles, selectedImage, setSelectedImage, uploadedFiles, setUploadedFiles }) {
     console.log("🚀 ~ DropzoneUploader ~ files:", files)
     const [uploadProgress, setUploadProgress] = useState({});
     console.log("🚀 ~ App ~ uploadProgress:", uploadProgress)
