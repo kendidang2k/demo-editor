@@ -21,20 +21,17 @@ export default function ImagesEditor({ selectedImage, uploadedFiles, files, setF
     console.log("🚀 ~ selectedUploadedImage ~ selectedUploadedImage:", selectedUploadedImage)
 
 
-    const downloadImage = async (url) => {
-        const response = await fetch(url);
-        const blob = await response.blob();
-        const urlObject = URL.createObjectURL(blob);
+    const handleSave = (editedImageObject) => {
+        const { imageBase64 } = editedImageObject; // Get the base64 string
+
+        // Create a link element, set its href to the base64 string, and programmatically click it
         const link = document.createElement('a');
-        link.href = urlObject;
-        link.download = 'downloaded_image.jpg'; // Specify the filename
+        link.href = imageBase64;
+        link.download = 'edited-image.png'; // You can set the file name here
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        URL.revokeObjectURL(urlObject);
     };
-
-
 
     return (
         <div>
@@ -59,7 +56,7 @@ export default function ImagesEditor({ selectedImage, uploadedFiles, files, setF
                     source={selectedUploadedImage}
                     onSave={(editedImageObject, designState) => {
                         console.log('saved', editedImageObject, designState)
-                        downloadImage(editedImageObject)
+                        handleSave(editedImageObject)
                     }
                     }
                     onClose={closeImgEditor}
