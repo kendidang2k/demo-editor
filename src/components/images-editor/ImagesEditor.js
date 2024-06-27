@@ -34,25 +34,9 @@ export default function ImagesEditor({ selectedImage, uploadedFiles, files, setF
     };
 
     return (
-        <div>
-            <div style={{ height: "70vh" }}>
-                {/* <PinturaEditor
-                    {...editorDefaults}
-                    src={selectedUploadedImage}
-                    onLoad={(res) => console.log("load image", res)}
-                    onProcess={({ dest, output }) => {
-                        console.log("🚀 ~ ImagesEditor ~ dest:", dest, output)
-                        const selectedFileIndex = files.findIndex(file => file.name === selectedImage.name)
-                        setFiles((prevFiles) => {
-                            prevFiles[selectedFileIndex] = URL.createObjectURL(dest)
-                            return [...prevFiles]
-                        })
-                        // setFiles([])
-                        // downloadImage(URL.createObjectURL(dest))
-                        // setResult(URL.createObjectURL(dest))
-                    }}
-                /> */}
-                {selectedUploadedImage && <FilerobotImageEditor
+        <div className='w-full h-full'>
+            {selectedUploadedImage ?
+                <FilerobotImageEditor
                     source={selectedUploadedImage}
                     onSave={(editedImageObject, designState) => {
                         console.log('saved', editedImageObject, designState)
@@ -65,6 +49,11 @@ export default function ImagesEditor({ selectedImage, uploadedFiles, files, setF
                     previewPixelRatio={10}
                     Text={{ text: 'Filerobot...' }}
                     Rotate={{ angle: 90, componentType: 'slider' }}
+                    tools={{
+                        transform: {
+                            operations: ['rotate', 'resize', 'crop'] // Exclude 'flip'
+                        }
+                    }}
                     Crop={{
                         presetsItems: [
                             {
@@ -110,10 +99,9 @@ export default function ImagesEditor({ selectedImage, uploadedFiles, files, setF
                     tabsIds={[TABS.ADJUST]}
                     defaultTabId={TABS.ADJUST}
                     defaultToolId={TOOLS.ADJUST}
-                />}
-            </div>
-
-
+                />
+                :
+                <div className='w-full h-full bg-black'></div>}
         </div>
     )
 }

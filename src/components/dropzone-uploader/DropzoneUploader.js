@@ -120,7 +120,7 @@ export default function DropzoneUploader({ files, setFiles, selectedImage, setSe
 
     return (
         <section className="w-full h-full flex items-center justify-center flex-col">
-            <div {...getRootProps({ className: 'dropzone w-[60%] h-[200px] border border-black border-dashed rounded-xl flex items-center justify-center' })}>
+            <div {...getRootProps({ className: 'dropzone w-[60%] h-[200px] border border-white border-dashed rounded-xl flex items-center justify-center text-white' })}>
                 <input {...getInputProps()} />
                 <p>Drag 'n' drop some files here, or click to select files</p>
             </div>

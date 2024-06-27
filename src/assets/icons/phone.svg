@@ -1,0 +1,13 @@
+<svg width="22" height="32" viewBox="0 0 22 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="icon">
+<g clip-path="url(#clip0_10234_2052)">
+<path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M11 0H0.333313V32H11V24H2.99998V8H11V0Z" fill="black"/>
+<path id="Subtract_2" fill-rule="evenodd" clip-rule="evenodd" d="M21.6667 0H11V8H19V24H11V32H21.6667V0Z" fill="white"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_10234_2052">
+<rect x="0.333313" width="21.3333" height="32" rx="3" fill="white"/>
+</clipPath>
+</defs>
+</svg>

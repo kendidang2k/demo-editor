@@ -1,0 +1,19 @@
+.hide_crop_frame {
+    background-color: #000;
+}
+
+.hide_crop_frame .cropper-crop-box {
+    display: none;
+}
+
+.hide_crop_frame .cropper-modal {
+    opacity: 1;
+}
+
+.hide_crop_frame .cropper-wrap-box {
+    z-index: 10;
+}
+
+.light_bg_cropper .cropper-wrap-box {
+    background-color: #fff;
+}
